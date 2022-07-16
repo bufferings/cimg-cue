@@ -10,7 +10,7 @@ workflows:
   main:
     jobs:
       - docker/publish:
-          image: bufferings/cimg-cue
+          image: bufferings/$CIRCLE_PROJECT_REPONAME
           tag: $CIRCLE_SHA1
           remote-docker-version: 20.10.12
           update-description: true

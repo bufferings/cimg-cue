@@ -1,0 +1,20 @@
+version: 2.1
+
+orbs: 
+  docker: circleci/docker@2.1.2
+
+jobs:
+  build-and-deploy:
+
+workflows:
+  main:
+    jobs:
+      - docker/publish:
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          remote-docker-version: 20.10.12
+          update-description: true
+          use-buildkit: true
+          use-remote-docker: true
+          filters:
+            branches:
+              only: main

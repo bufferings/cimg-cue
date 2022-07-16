@@ -13,7 +13,7 @@ workflows:
           image: bufferings/cimg-cue
           tag: $CIRCLE_SHA1
           remote-docker-version: 20.10.12
-          update-description: true
+          update-description: false
           use-buildkit: true
           filters:
             branches:
